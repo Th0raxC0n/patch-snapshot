@@ -1,0 +1,269 @@
+{
+  "schema": "patch.permission-snapshot.v1",
+  "generatedAt": "2026-09-23T19:03:50.983Z",
+  "target": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+  "rpc": "https://mainnet.base.org",
+  "chain": {
+    "id": 8453,
+    "idHex": "0x2105"
+  },
+  "block": {
+    "number": "51700434",
+    "numberHex": "0x314e2d2",
+    "hash": "0x8921f0f89cc10bfdc642d8dd61616ea8ab04c735827d6ab1ce8acc3f91dd9232",
+    "timestamp": "2026-09-23T19:03:35.000Z"
+  },
+  "bytecode": {
+    "sizeBytes": 1852,
+    "keccak256": "0xa6705a10bb756b5dea144591118be77d7af0c3eee3bf2dfe2583dcb0364fefab",
+    "selectorHits": [
+      {
+        "signature": "upgradeTo(address)",
+        "category": "upgrade",
+        "selector": "0x3659cfe6",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "upgradeToAndCall(address,bytes)",
+        "category": "upgrade",
+        "selector": "0x4f1ef286",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "admin()",
+        "category": "upgrade",
+        "selector": "0xf851a440",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "changeAdmin(address)",
+        "category": "upgrade",
+        "selector": "0x8f283970",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      }
+    ]
+  },
+  "proxy": {
+    "standardChecked": "EIP-1967 storage slots",
+    "implementation": "0x2ce6311ddae708829bc0784c967b7d77d19fd779",
+    "implementationSource": "implementation-call",
+    "admin": "0x4fc7850364958d97b4d3f5a08f79db2493f8ca44",
+    "adminSource": "admin-call",
+    "beacon": null,
+    "implementationCodeSizeBytes": 23464,
+    "implementationCodeKeccak256": "0x11b75a237997ab8328f65b2d5a55c10f0346d0a175741ed42ddf4f2c66b9e873",
+    "implementationSelectorHits": [
+      {
+        "signature": "owner()",
+        "category": "ownership",
+        "selector": "0x8da5cb5b",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "transferOwnership(address)",
+        "category": "ownership",
+        "selector": "0xf2fde38b",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "pause()",
+        "category": "pause",
+        "selector": "0x8456cb59",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "unpause()",
+        "category": "pause",
+        "selector": "0x3f4ba83a",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "paused()",
+        "category": "pause",
+        "selector": "0x5c975abb",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "mint(address,uint256)",
+        "category": "supply",
+        "selector": "0x40c10f19",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      },
+      {
+        "signature": "burn(uint256)",
+        "category": "supply",
+        "selector": "0x42966c68",
+        "confidence": "heuristic",
+        "note": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+      }
+    ]
+  },
+  "calls": {
+    "name": {
+      "status": "verified",
+      "value": "USD Coin"
+    },
+    "symbol": {
+      "status": "verified",
+      "value": "USDC"
+    },
+    "decimals": {
+      "status": "verified",
+      "value": "6"
+    },
+    "totalSupply": {
+      "status": "verified",
+      "value": "4268752517800657"
+    },
+    "owner": {
+      "status": "verified",
+      "value": "0x3abd6f64a422225e61e435bae41db12096106df7"
+    },
+    "paused": {
+      "status": "verified",
+      "value": false
+    },
+    "implementation": {
+      "status": "verified",
+      "value": "0x2ce6311ddae708829bc0784c967b7d77d19fd779"
+    },
+    "admin": {
+      "status": "verified",
+      "value": "0x4fc7850364958d97b4d3f5a08f79db2493f8ca44"
+    }
+  },
+  "findings": [
+    {
+      "level": "warning",
+      "title": "implementation() returns an address",
+      "evidence": {
+        "implementation": "0x2ce6311ddae708829bc0784c967b7d77d19fd779",
+        "call": "implementation()"
+      },
+      "limitation": "This identifies an implementation address, not who can upgrade it."
+    },
+    {
+      "level": "warning",
+      "title": "admin() returns an address",
+      "evidence": {
+        "admin": "0x4fc7850364958d97b4d3f5a08f79db2493f8ca44",
+        "call": "admin()"
+      },
+      "limitation": "Admin authority may be mediated by another contract; inspect the admin separately."
+    },
+    {
+      "level": "warning",
+      "title": "owner() returns a nonzero address",
+      "evidence": {
+        "owner": "0x3abd6f64a422225e61e435bae41db12096106df7"
+      },
+      "limitation": "owner() alone does not enumerate AccessControl roles, proxy admins, guardians, or custom authorities."
+    },
+    {
+      "level": "info",
+      "title": "paused() returned false",
+      "evidence": {
+        "paused": false
+      },
+      "limitation": "This is state at one pinned block, not a guarantee about future state."
+    },
+    {
+      "level": "heuristic",
+      "title": "upgradeTo(address) selector bytes detected",
+      "evidence": {
+        "selector": "0x3659cfe6",
+        "location": "target"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "upgradeToAndCall(address,bytes) selector bytes detected",
+      "evidence": {
+        "selector": "0x4f1ef286",
+        "location": "target"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "admin() selector bytes detected",
+      "evidence": {
+        "selector": "0xf851a440",
+        "location": "target"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "changeAdmin(address) selector bytes detected",
+      "evidence": {
+        "selector": "0x8f283970",
+        "location": "target"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "pause() selector bytes detected",
+      "evidence": {
+        "selector": "0x8456cb59",
+        "location": "implementation"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "unpause() selector bytes detected",
+      "evidence": {
+        "selector": "0x3f4ba83a",
+        "location": "implementation"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "paused() selector bytes detected",
+      "evidence": {
+        "selector": "0x5c975abb",
+        "location": "implementation"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "mint(address,uint256) selector bytes detected",
+      "evidence": {
+        "selector": "0x40c10f19",
+        "location": "implementation"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    },
+    {
+      "level": "heuristic",
+      "title": "burn(uint256) selector bytes detected",
+      "evidence": {
+        "selector": "0x42966c68",
+        "location": "implementation"
+      },
+      "limitation": "Selector bytes occur in runtime bytecode; this does not prove the function is reachable or permissionless."
+    }
+  ],
+  "limitations": [
+    "This is a read-only permission snapshot, not a comprehensive security audit.",
+    "Selector-byte matches are heuristics and may be false positives or unreachable code.",
+    "owner() and EIP-1967 slots do not enumerate every custom role, multisig policy, timelock, guardian, or external dependency.",
+    "Source verification, transaction simulation, historical event analysis, holder concentration, and liquidity analysis are not included in v1.",
+    "The report describes state at the pinned block and cannot guarantee future behavior."
+  ]
+}

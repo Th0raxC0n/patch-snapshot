@@ -1,0 +1,64 @@
+{
+  "schema": "patch.permission-snapshot.v1",
+  "generatedAt": "2026-09-23T18:58:19.415Z",
+  "target": "0x4200000000000000000000000000000000000006",
+  "rpc": "https://mainnet.base.org",
+  "chain": {
+    "id": 8453,
+    "idHex": "0x2105"
+  },
+  "block": {
+    "number": "51700274",
+    "numberHex": "0x314e232",
+    "hash": "0xe7873be876a1440b9c5fe515c1d2de0e1ab378c09d57dbf63176aaba7879808b",
+    "timestamp": "2026-09-23T18:58:15.000Z"
+  },
+  "bytecode": {
+    "sizeBytes": 2041,
+    "keccak256": "0x8a3a1f6a9f9dce633117adee5b458245835a8645a8c8726a26382a4622508b1c",
+    "selectorHits": []
+  },
+  "proxy": {
+    "standardChecked": "EIP-1967 storage slots",
+    "implementation": null,
+    "admin": null,
+    "beacon": null,
+    "implementationCodeSizeBytes": 0,
+    "implementationCodeKeccak256": null,
+    "implementationSelectorHits": []
+  },
+  "calls": {
+    "name": {
+      "status": "verified",
+      "value": "Wrapped Ether"
+    },
+    "symbol": {
+      "status": "verified",
+      "value": "WETH"
+    },
+    "decimals": {
+      "status": "verified",
+      "value": "18"
+    },
+    "totalSupply": {
+      "status": "verified",
+      "value": "266005964724812655724027"
+    },
+    "owner": {
+      "status": "unparsed",
+      "raw": "0x"
+    },
+    "paused": {
+      "status": "unavailable",
+      "error": "RPC HTTP 429 for eth_call"
+    }
+  },
+  "findings": [],
+  "limitations": [
+    "This is a read-only permission snapshot, not a comprehensive security audit.",
+    "Selector-byte matches are heuristics and may be false positives or unreachable code.",
+    "owner() and EIP-1967 slots do not enumerate every custom role, multisig policy, timelock, guardian, or external dependency.",
+    "Source verification, transaction simulation, historical event analysis, holder concentration, and liquidity analysis are not included in v1.",
+    "The report describes state at the pinned block and cannot guarantee future behavior."
+  ]
+}
