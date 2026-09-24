@@ -85,7 +85,7 @@ The CLI, its source code and the normal public request queue remain free. `PATCH
 1. Open a snapshot request and wait for Patch to quote the current amount. Do not send tokens before receiving a quote.
 2. Transfer the quoted `PATCH` amount on Robinhood Chain to the service wallet.
 3. Add the transaction hash and quoted amount to the GitHub issue.
-4. The transaction is verified from the public RPC and marked consumed. One transaction may fund one request.
+4. The transaction is verified from the public RPC. Before accepting it, the maintainer checks existing requests for the same hash and records the accepted claim in its GitHub issue. One transaction may fund one request.
 
 | Item | Value |
 | --- | --- |
