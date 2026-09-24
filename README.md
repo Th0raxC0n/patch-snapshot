@@ -72,6 +72,12 @@ npm test
 
 The test suite verifies the Ethereum Keccak implementation against published vectors.
 
+## Contributing
+
+Small, reproducible contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The current focused community task is [canonical EIP-1167 minimal-proxy detection](docs/contributor-task-eip1167.md): exact byte-pattern recognition, same-block implementation hashing, deterministic fixtures, and an explicit boundary that a clone match is evidence of a target pointer—not a safety verdict.
+
 ## Request a Patch Check
 
 Need a focused, evidence-first snapshot of a public EVM contract? [Open a snapshot request](https://github.com/Th0raxC0n/patch-snapshot/issues/new?template=snapshot-request.yml) with the chain, contract address and exact question you want answered.
