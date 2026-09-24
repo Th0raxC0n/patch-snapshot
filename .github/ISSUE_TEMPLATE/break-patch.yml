@@ -1,0 +1,81 @@
+name: BREAK PATCH submission
+description: Submit a deterministic false positive, false negative, misleading receipt, or evidence-boundary case.
+title: "[break-patch]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        BREAK PATCH is an adversarial testing desk, not a live exploitation program. Use local fixtures or public read-only evidence. Never include secrets or target live funds.
+  - type: dropdown
+    id: round
+    attributes:
+      label: Challenge round
+      options:
+        - "Round 1 — Clone Trap"
+        - "General evidence-boundary case"
+    validations:
+      required: true
+  - type: dropdown
+    id: claim
+    attributes:
+      label: Claimed result
+      options:
+        - "False positive"
+        - "False negative"
+        - "Misleading receipt or label"
+        - "Expected limitation worth documenting"
+        - "Independent reproduction"
+    validations:
+      required: true
+  - type: textarea
+    id: artifact
+    attributes:
+      label: Deterministic artifact
+      description: Provide exact runtime bytecode, a public address plus chain and pinned block, or a minimal local fixture.
+      placeholder: "0x... or a link to a minimal fixture"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should Patch Snapshot report?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: What does it report now? Include exact output when available.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: List the smallest deterministic steps needed to reproduce the result.
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Evidence boundary
+      description: Explain what the artifact proves and what it does not prove.
+    validations:
+      required: true
+  - type: textarea
+    id: deferred
+    attributes:
+      label: Deferred edges
+      description: Note anything intentionally outside this submission.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I included no private keys, seed phrases, credentials, or private RPC URLs.
+          required: true
+        - label: Reproducing this submission requires no wallet signature, approval, broadcast transaction, or transfer.
+          required: true
+        - label: This submission does not target live funds or provide live exploitation instructions.
+          required: true
