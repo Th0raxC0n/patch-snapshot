@@ -78,6 +78,10 @@ Small, reproducible contributions are welcome. Start with [CONTRIBUTING.md](CONT
 
 The current focused community task is [canonical EIP-1167 minimal-proxy detection](docs/contributor-task-eip1167.md): exact byte-pattern recognition, same-block implementation hashing, deterministic fixtures, and an explicit boundary that a clone match is evidence of a target pointer—not a safety verdict.
 
+## BREAK PATCH
+
+Think the tool is wrong? [BREAK PATCH](docs/break-patch.md) is the public adversarial testing desk. Submit a deterministic false positive, false negative, misleading receipt, or boundary case. Confirmed misses stay public and become regression tests or documented limitations; accepted contributors and independent reviewers receive permanent credit.
+
 ## Request a Patch Check
 
 Need a focused, evidence-first snapshot of a public EVM contract? [Open a snapshot request](https://github.com/Th0raxC0n/patch-snapshot/issues/new?template=snapshot-request.yml) with the chain, contract address and exact question you want answered.
