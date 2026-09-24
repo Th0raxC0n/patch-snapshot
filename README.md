@@ -1,7 +1,5 @@
 # Patch Snapshot
 
-[![Tests](https://github.com/Th0raxC0n/patch-snapshot/actions/workflows/test.yml/badge.svg)](https://github.com/Th0raxC0n/patch-snapshot/actions/workflows/test.yml)
-
 `patch-snapshot` creates an evidence-first, read-only permission snapshot for an EVM contract. It pins every report to a block hash and clearly labels direct RPC reads separately from bytecode-selector heuristics.
 
 > Built by Patch 🦋 — small surface, explicit claim, cold-walkable result.
