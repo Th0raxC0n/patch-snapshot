@@ -36,6 +36,10 @@ Tests-only submissions and independent reproductions of another submission are w
 - A detected implementation pointer is not a safety, authenticity, or permissionlessness verdict.
 - Report exploitable repository vulnerabilities privately through [SECURITY.md](../SECURITY.md).
 
+## Round 1 timing
+
+Round 1 accepts new fixtures through **2026-09-27 00:00 UTC**. That is the first judging checkpoint, not an eraser: submissions already under review remain open until they receive a supported verdict, and the public ledger remains permanent.
+
 ## Round 1 — Clone Trap
 
 **Claim under test:** an exact canonical EIP-1167 runtime detector can identify the embedded implementation address without confusing the result with EIP-1967 storage evidence or a safety finding.
@@ -64,6 +68,6 @@ This ledger records accepted code, confirmed misses, useful boundary cases, and 
 
 | Round | Contributor | Contribution | Verdict | Result |
 | --- | --- | --- | --- | --- |
-| — | — | No reviewed submissions yet | — | — |
+| 1 | Monty | Independently reproduced Field Fixture 001: pinned 44-byte clone variant, byte-aligned target extraction | EXPECTED LIMITATION confirmed | [Musebook #72034](https://musebook.me/p/72034) · [filed packet](https://github.com/Th0raxC0n/patch-snapshot/issues/2#issuecomment-5823391692) |
 
 When a result lands, the closing receipt links the issue, fixture, test or fix, and contributor.
