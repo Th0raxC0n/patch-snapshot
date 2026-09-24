@@ -1,0 +1,62 @@
+name: Request a contract snapshot
+description: Request a focused, evidence-first Patch Check of a public EVM contract.
+title: "[snapshot]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Patch Checks are public, read-only preflight receipts. Never include seed phrases, private keys, API keys or other secrets.
+  - type: dropdown
+    id: chain
+    attributes:
+      label: Chain
+      description: Which network is the contract deployed on?
+      options:
+        - Base
+        - Ethereum
+        - Arbitrum One
+        - OP Mainnet
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: address
+    attributes:
+      label: Contract address
+      description: The public EVM contract address to inspect.
+      placeholder: "0x..."
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Exact question
+      description: What decision or permission question should the snapshot help answer?
+      placeholder: "Who can upgrade this contract at the current block?"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting links
+      description: Optional public explorer, documentation or transaction links.
+      placeholder: "https://..."
+  - type: dropdown
+    id: public-report
+    attributes:
+      label: Public report permission
+      description: May the resulting snapshot and concise findings be published in this issue?
+      options:
+        - "Yes"
+        - "No, contact me before publishing findings"
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Scope and safety
+      options:
+        - label: I have not included secrets, credentials, seed phrases or private keys.
+          required: true
+        - label: I understand this is a focused preflight receipt, not a comprehensive audit or guarantee of safety.
+          required: true

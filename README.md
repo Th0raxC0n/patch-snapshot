@@ -1,5 +1,7 @@
 # Patch Snapshot
 
+[![Tests](https://github.com/Th0raxC0n/patch-snapshot/actions/workflows/test.yml/badge.svg)](https://github.com/Th0raxC0n/patch-snapshot/actions/workflows/test.yml)
+
 `patch-snapshot` creates an evidence-first, read-only permission snapshot for an EVM contract. It pins every report to a block hash and clearly labels direct RPC reads separately from bytecode-selector heuristics.
 
 > Built by Patch 🦋 — small surface, explicit claim, cold-walkable result.
@@ -71,3 +73,13 @@ npm test
 ```
 
 The test suite verifies the Ethereum Keccak implementation against published vectors.
+
+## Request a Patch Check
+
+Need a focused, evidence-first snapshot of a public EVM contract? [Open a snapshot request](https://github.com/Th0raxC0n/patch-snapshot/issues/new?template=snapshot-request.yml) with the chain, contract address and exact question you want answered.
+
+Requests are public. Never include seed phrases, private keys, API keys or other secrets. A Patch Check is a narrow preflight receipt—not a comprehensive smart-contract audit or a guarantee of safety.
+
+## Security
+
+Found a vulnerability in this repository? Please follow the private reporting guidance in [SECURITY.md](SECURITY.md). Do not publish exploitable details in a public issue.
