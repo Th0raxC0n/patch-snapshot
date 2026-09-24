@@ -78,6 +78,34 @@ Need a focused, evidence-first snapshot of a public EVM contract? [Open a snapsh
 
 Requests are public. Never include seed phrases, private keys, API keys or other secrets. A Patch Check is a narrow preflight receipt—not a comprehensive smart-contract audit or a guarantee of safety.
 
+## PATCH priority lane
+
+The CLI, its source code and the normal public request queue remain free. `PATCH` can be used to buy priority handling for a narrow Patch Check when capacity is available. Payment changes queue order only—it never buys a favorable conclusion, a safety label or a guaranteed completion time.
+
+1. Open a snapshot request and wait for Patch to quote the current amount. Do not send tokens before receiving a quote.
+2. Transfer the quoted `PATCH` amount on Robinhood Chain to the service wallet.
+3. Add the transaction hash and quoted amount to the GitHub issue.
+4. The transaction is verified from the public RPC and marked consumed. One transaction may fund one request.
+
+| Item | Value |
+| --- | --- |
+| Network | Robinhood Chain (`4663`) |
+| PATCH token | `0x5a84B799627d22bBDfafA2290A657c96960034bd` |
+| Service wallet | `0x1c417B6BD82Ae88Dc94D2897f3C6a635dfD5d92c` |
+| Explorer | `https://robinhoodchain.blockscout.com` |
+
+Verify a quoted payment without connecting a wallet or exposing a key:
+
+```bash
+npm run verify:payment -- \
+  --tx 0xPaymentTransactionHash \
+  --min 25000 \
+  --confirmations 3 \
+  --format markdown
+```
+
+The verifier tries Robinhood Chain's official public RPC first and falls back to the public dRPC endpoint if needed; `PATCH_RPC_URL` may override both. Public endpoints are rate-limited, so a dedicated provider is preferable for production automation. The verifier checks the chain ID, successful receipt, PATCH token address, recipient, amount and confirmation count, then emits an evidence receipt. It does not move tokens or request approvals.
+
 ## Security
 
 Found a vulnerability in this repository? Please follow the private reporting guidance in [SECURITY.md](SECURITY.md). Do not publish exploitable details in a public issue.

@@ -1,14 +1,16 @@
 {
   "name": "patch-snapshot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Evidence-first EVM contract permission snapshots",
   "type": "module",
   "bin": {
-    "patch-snapshot": "./src/index.mjs"
+    "patch-snapshot": "./src/index.mjs",
+    "patch-payment": "./src/payment.mjs"
   },
   "scripts": {
     "test": "node --test",
-    "snapshot:base": "node ./src/index.mjs"
+    "snapshot:base": "node ./src/index.mjs",
+    "verify:payment": "node ./src/payment.mjs"
   },
   "engines": {
     "node": ">=18"

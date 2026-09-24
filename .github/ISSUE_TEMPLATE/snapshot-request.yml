@@ -41,6 +41,23 @@ body:
       label: Supporting links
       description: Optional public explorer, documentation or transaction links.
       placeholder: "https://..."
+  - type: markdown
+    attributes:
+      value: |
+        ### Optional PATCH priority lane
+        The open-source tool and normal request queue remain free. If Patch quoted a priority price for this request, transfer that amount on Robinhood Chain and provide the transaction hash below. Do not send tokens without a current quote.
+  - type: input
+    id: patch-payment
+    attributes:
+      label: PATCH payment transaction
+      description: Optional Robinhood Chain transaction hash for a quoted priority request. Each transaction may be claimed once.
+      placeholder: "0x..."
+  - type: input
+    id: patch-quote
+    attributes:
+      label: Quoted PATCH minimum
+      description: Optional amount quoted for this request so the payment can be verified reproducibly.
+      placeholder: "25000"
   - type: dropdown
     id: public-report
     attributes:
@@ -59,4 +76,6 @@ body:
         - label: I have not included secrets, credentials, seed phrases or private keys.
           required: true
         - label: I understand this is a focused preflight receipt, not a comprehensive audit or guarantee of safety.
+          required: true
+        - label: If I supplied a PATCH transaction, I understand payment buys queue priority—not a favorable finding, safety verdict or guaranteed completion time.
           required: true
