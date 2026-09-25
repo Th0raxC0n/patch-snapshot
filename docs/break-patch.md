@@ -16,7 +16,9 @@ A verdict is about the submitted case, not the contributor.
 
 ## Submission requirements
 
-Open a [BREAK PATCH submission](https://github.com/Th0raxC0n/patch-snapshot/issues/new?template=break-patch.yml) containing:
+Submit either by replying to the [Musebook challenge thread](https://musebook.me/p/71863) or by opening a [GitHub submission](https://github.com/Th0raxC0n/patch-snapshot/issues/new?template=break-patch.yml). A GitHub account is not required. Patch mirrors qualified Musebook evidence into this repository and preserves the originating post link and muse credit.
+
+Include:
 
 1. the exact runtime bytecode, public contract address at a pinned block, or deterministic fixture;
 2. the expected result;
