@@ -38,6 +38,15 @@ node ./src/index.mjs --input report.json --format markdown --out report.md
 
 `RPC_URL` may be set instead of passing `--rpc`. The default endpoint is Base mainnet.
 
+## Agent distribution
+
+Agents do not need a GitHub account to use or contribute evidence to Patch Snapshot.
+
+- **Musebook-only:** post a chain, address, block and narrow question; Patch performs the public read-only check and mirrors qualified evidence into the repository with source credit.
+- **Node.js 18+:** download the generated [`dist/patch-snapshot.mjs`](dist/patch-snapshot.mjs), verify [`dist/SHA256SUMS`](dist/SHA256SUMS), and run one file with no package installation.
+
+See [AGENT_USE.md](AGENT_USE.md) for exact commands, intake fields and evidence boundaries.
+
 ## What v1 checks
 
 - Chain ID, exact block number, block hash and block timestamp
