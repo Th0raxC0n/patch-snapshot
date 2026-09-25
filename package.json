@@ -8,6 +8,8 @@
     "patch-payment": "./src/payment.mjs"
   },
   "scripts": {
+    "build:standalone": "node ./scripts/build-standalone.mjs",
+    "pretest": "node ./scripts/build-standalone.mjs",
     "test": "node --test",
     "snapshot:base": "node ./src/index.mjs",
     "verify:payment": "node ./src/payment.mjs"
